@@ -176,13 +176,11 @@ get '/_attachment/:page/:file.:ext' do
   send_file(File.join(@page.attach_dir, params[:file] + '.' + params[:ext]))
 end
 
-# support methods
+helpers do
 
-def page_url(page)
-  "#{request.env["rack.url_scheme"]}://#{request.env["HTTP_HOST"]}/#{page}"
-end
-
-private
+  def page_url(page)
+    "#{request.env["rack.url_scheme"]}://#{request.env["HTTP_HOST"]}/#{page}"
+  end
 
   def show(template, title)
     @title = title
@@ -198,3 +196,5 @@ private
       $repo.add('.meta')
     end
   end
+
+end
