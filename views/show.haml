@@ -1,0 +1,60 @@
+%h1.page= @page.name
+
+= @env
+
+%ul.sub_nav
+  - if params[:rev]
+    %li= link_to "/#{@page.name}", "current"
+  - else
+    %li= link_to "/e/#{@page.name}", "edit"
+  
+  - if params[:rev]
+    %li= link_to "/h/#{@page.name}/#{@page.commit}.txt", "raw"
+  - else
+    %li= link_to "/#{@page.name}.txt", "raw"
+  
+  %li= link_to "/h/#{@page.name}", "history"
+  %li= link_to "/a/search?search=#{@page.name}", "backlinks"
+  
+  - if @page.previous_commit
+    %li= link_to "/h/#{@page.name}/#{@page.previous_commit}", "older"
+
+  - if @page.next_commit
+    %li= link_to "/h/#{@page.name}/#{@page.next_commit}", "newer"
+    
+  - if files = @page.attachments
+    %li
+      %h3 Attachments
+      %ul
+        - files.each do |file|
+          %li= link_to file.link_path, file.name
+
+  %li
+    %ul.sub_nav.details
+      %li#updated_at{ :title => @page.updated_at.for_time_ago_in_words }
+        updated
+        = @page.updated_at
+      %li
+        = $repo.current_branch
+        = link_to "/a/branches", "branch"
+
+.content.edit_area= @page.body
+
+:javascript
+  $(document).ready(function() {
+    var PAGE_TITLE = $("h1.page").html();
+    
+    $(".edit_area").editable('/eip/' + PAGE_TITLE, {
+      indicator: "saving...",
+      tooltip: 'double-click to edit...',
+      cancel: 'cancel',
+      submit: 'save',
+      event: 'dblclick',
+      cssclass: 'edit',
+      loadurl: '/' + PAGE_TITLE + '.txt',
+      type: 'textarea',
+      name: 'body'
+    });
+    
+    $("#updated_at").timeAgoInWords("updated");
+  });

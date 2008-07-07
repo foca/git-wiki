@@ -184,7 +184,7 @@ helpers do
 
   def show(template, title)
     @title = title
-    erb(template)
+    haml(template)
   end
 
   def touchfile
@@ -195,6 +195,10 @@ helpers do
       f.close
       $repo.add('.meta')
     end
+  end
+
+  def link_to(url, text)
+    %Q(<a href="#{url}">#{text}</a>)
   end
 
 end

@@ -5,7 +5,7 @@ require 'extensions'
 require 'page'
 require 'thin'
 
-%w(git redcloth rubypants yaml).each do |gem| 
+%w(git redcloth rubypants yaml haml).each do |gem| 
   require_gem_with_feedback gem
 end
 

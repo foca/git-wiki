@@ -1,8 +1,4 @@
 /* cribbed from http://nullstyle.com/2007/06/02/caching-time_ago_in_words */
-function time_ago_in_words(from) {
-  return distance_of_time_in_words(new Date(), new Date(from)) 
-}
-
 function distance_of_time_in_words(to, from) {
   seconds_ago = ((to  - from) / 1000);
   minutes_ago = Math.floor(seconds_ago / 60);
@@ -29,4 +25,9 @@ function clearField(e) {
   e.cleared = true;
   e.value = '';
   e.style.color = '#333';
+}
+
+jQuery.prototype.timeAgoInWords = function(prefix) {
+	var time = distance_of_time_in_words(new Date(), new Date(parseInt(this.attr("title"))));
+	return this.attr("title", "").html(prefix + " " + time + " ago");
 }
