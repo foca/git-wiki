@@ -52,6 +52,11 @@ a {
 #content {
   padding-top: 1em;
   padding-bottom: 2em; }
+
+	#content strong {
+		font-weight: bold; }
+
+	/* titles */
 	#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 	#content h1 {
@@ -91,19 +96,30 @@ a {
 		font-weight: bold;
 		color: #4e4e4e;
 		margin-top: .5em; }
+
+	/* code */
 	#content code, #content pre, #content textarea {
 		font-family: "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", "Inconsolata", "Consolas", monospace; }
 	#content pre {
 		margin: .5em 0;
 		padding: .5em; }
+
+	/* forms */
 	#content textarea {
 	  border: 1px solid #ccc;
 	  font-size: .9em;
-	  padding: .5em; }
-	#content form.edit textarea {
+	  padding: .5em;
+	 	display: block; 
 		width: 43em !important; }
-	#content strong {
-		font-weight: bold; }
+	#content #edit_textarea {
+		height: 30em; }
+	#content label {
+		display: block;
+		margin-top: 1em; }
+	#content p.submit {
+		margin-top: .5em; }
+
+	/* lists */
 	#content ul, #content ol {
 		margin-left: 1em;
 		margin-bottom: 1em; }

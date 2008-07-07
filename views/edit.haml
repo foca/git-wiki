@@ -1,0 +1,12 @@
+%h1
+  Editing
+  = link_to "/#{@page.name}", @page.name
+
+%form{ :action => "/e/#{@page.name}", :method => "post" }
+  %textarea{ :name => "body", :id => "edit_textarea" }= @page.escaped_raw_body
+  %label{ :for => "message_textarea" } Message:
+  %textarea{ :name => "message", :rows => 2, :cols => 40, :id => "message_textarea" }
+  %p.submit
+    %button{ :type => "submit" } Save as the newest version
+    or
+    = link_to "/#{@page.name}", "go back"
