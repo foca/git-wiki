@@ -1,5 +1,5 @@
 %h1.page= @page.name
-.content.edit_area
+.content.edit_area{ :id => @page.name }
   :textile
     #{@page.body}
 
@@ -12,6 +12,7 @@
       submit: 'save',
       event: 'dblclick',
       cssclass: 'edit',
+      height: '30em',
       loadurl: '/#{@page.name}.txt',
       type: 'textarea',
       name: 'body'
