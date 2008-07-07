@@ -13,7 +13,7 @@ class Page
   end
 
   def body
-    @body ||= RubyPants.new(RedCloth.new(raw_body.wiki_linked).to_html).to_html
+    @body ||= raw_body.wiki_linked
   end
   
   def branch_name
