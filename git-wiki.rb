@@ -44,7 +44,7 @@ end
 post '/eip/:page' do
   @page = Page.new(params[:page])
   @page.update(params[:body])
-  @page.body
+  @page.formatted_body
 end
 
 get '/h/:page' do
