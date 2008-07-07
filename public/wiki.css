@@ -9,7 +9,7 @@ a {
 	color: #17d;
 	text-decoration: none; }
 	a:hover {
-		color: #ed1556;
+		color: #05a;
 		text-decoration: underline; }
 
 #header, #content, #footer {
@@ -29,7 +29,7 @@ a {
     font: bold 3em Georgia, "Times New Roman", serif;
 		width: 6em; }
 		#header h1 a {
-	    color: #ed1556;
+	    color: #333;
 			display: block;
 			line-height: 108px;
 			padding-left: 3.5em;
@@ -40,7 +40,7 @@ a {
 			background-repeat: no-repeat;
 			background-position: left middle; }
 			#header h1 a:hover {
-				color: #cb0334; }
+				color: #4e4e4e; }
 	#navigation {
 		position: absolute; 
 		left: 23em;
