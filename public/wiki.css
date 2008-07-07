@@ -140,21 +140,16 @@ a {
 	
 	/* quotes */
 	#content blockquote {
-		margin: .5em 0 .5em 2em;
+		margin: .5em 0;
+		padding: .5em 0 0 2em;
 		font-size: 1.25em;
 		color: #333;
-		position: relative; }
-		#content blockquote:before {
-			content: "“";
-			position: absolute;
-			z-index: -1;
-			left: -.2em;			
-			top: -.3em;
-			font-size: 8em;
-			color: #ddd; }
+		position: relative; 
+		background: url(/quotes.png) left top no-repeat; }
 		#content blockquote p {
 			margin: 0;
-			padding: 0;	}
+			padding: 0;
+			position: relative;	}
 		#content blockquote address {
 			display: block;
 			text-align: right; 
