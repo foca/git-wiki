@@ -152,10 +152,14 @@ a {
 			top: -.3em;
 			font-size: 8em;
 			color: #ddd; }
-	#content address {
-		display: block;
-		text-align: right; 
-		margin-top: .5em; }
+		#content blockquote p {
+			margin: 0;
+			padding: 0;	}
+		#content blockquote address {
+			display: block;
+			text-align: right; 
+			margin-top: .5em; 
+			font-size: .85em; }
 
 #footer {
   padding: 1.5em 2.5em;
