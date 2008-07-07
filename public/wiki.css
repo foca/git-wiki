@@ -93,6 +93,9 @@ a {
 		margin-top: .5em; }
 	#content code, #content pre, #content textarea {
 		font-family: "Deja Vu Sans Mono", "Bitstream Vera Sans Mono", "Inconsolata", "Consolas", monospace; }
+	#content pre {
+		margin: .5em 0;
+		padding: .5em; }
 	#content textarea {
 	  border: 1px solid #ccc;
 	  font-size: .9em;
@@ -101,9 +104,14 @@ a {
 		width: 43em !important; }
 	#content strong {
 		font-weight: bold; }
-	#content ul {
-		list-style-type: square;
-		margin-left: 2em; }
+	#content ul, #content ol {
+		margin-left: 1em;
+		margin-bottom: 1em; }
+	#content ul li {
+		list-style-type: disc; }
+	#content ol li {
+		margin-left: 1em;
+		list-style-type: decimal; }
 	
 
 #footer {
